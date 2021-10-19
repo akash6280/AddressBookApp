@@ -30,4 +30,20 @@ window.addEventListener('DOMContentLoaded',(event) => {
             phoneNumberError.textContent = e;
         }
     });
+
+    const address = document.querySelector('#address');
+    const addressError = document.querySelector('.address-error');
+    address.addEventListener('input', function () {
+        if (address.value.length == 0) {
+            addressError.textContent = "";
+            return;
+        }
+        try {
+            console.log(address.value);
+            (new AddressBookData()).address = address.value;
+            addressError.textContent = "";
+        } catch (e) {
+            addressError.textContent = e;
+        }
+    });
 });
