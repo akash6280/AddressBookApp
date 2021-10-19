@@ -41,14 +41,14 @@
 
                 <div class="row-content">
                     <label class="label text" for="address">Address</label>
-                    <textarea class="input" id="address" name="address" style="height: 100px"></textarea>
+                    <textarea class="input" id="address" name="address" style="height: 100px" required></textarea>
                     <error-output class="address-error" for="address"></error-output>
                 </div>
 
                 <div class="row-content select-elements">
                     <div>
                       <label class="label text " for="city">City</label>
-                      <select id="city" name="city">
+                      <select id="city" name="city" required>
                         <option value="" class="text" disabled selected hidden>Select City</option>
                         <option value="Bangalore">Bangalore</option>
                         <option value="Mumbai">Mumbai</option>
@@ -60,8 +60,8 @@
                     </div>
                     <div>
                         <label class="label text " for="state">state</label>
-                        <select id="state" name="state">
-                          <option value="" class="text" disabled selected hidden>Select City</option>
+                        <select id="state" name="state" required>
+                          <option value="" class="text" disabled selected hidden>Select State</option>
                           <option value="Karnataka">Karnataka</option>
                           <option value="Maharashtra">Maharashtra</option>
                           <option value="Madhya Pradesh">Madhya Pradesh</option>
@@ -69,7 +69,19 @@
                           <option value="Uttar Pradesh">Uttar Pradesh</option>
                           <option value="Telangana">Telangana</option>
                         </select>
-                    </div>      
+                    </div>
+                    <div>
+                        <label class="label text " for="zip">Zip Code</label>
+                        <select id="zipCode" name="zipCode" required>
+                          <option value="" class="text" disabled selected hidden>Select Zip Code</option>
+                          <option value="530068">530068</option>
+                          <option value="444901">444901</option>
+                          <option value="463106">463106</option>
+                          <option value="600001">600001</option>
+                          <option value="226001">226001</option>
+                          <option value="500001">500001</option>
+                        </select>
+                    </div>    
                 </div>
 
             </form>    
