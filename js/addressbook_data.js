@@ -1,6 +1,6 @@
 const nameRegex = RegExp("^[A-Z]{1}[a-z]{2,}$");
 const phoneNumberRegex = RegExp("^([+][0-9]{3}|[0-9]{2})?[1-9]{1}[0-9]{9}$");
-const addressRegex= RegExp('^[a-zA-Z0-9]{3,}([\\s]?[a-zA-Z0-9]{3,})*$');
+const addressRegex= RegExp('^[a-zA-Z0-9/-]{3,}([\\s]*([a-zA-Z0-9]{3,})?)*$');
 
 class AddressBookData {
 
