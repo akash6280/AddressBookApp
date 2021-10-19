@@ -1,5 +1,5 @@
 
-   body {
+ body {
     margin: 0;
     height: 100%;
     background-color: #f7f7f7;
@@ -45,4 +45,51 @@
   * {
       box-sizing: border-box;
   }
+ 
+  .form-content {
+    margin-top: 35px;
+    min-height: calc(100%-80px);
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid green;
+  }
+ 
+  .form {
+    min-width: 60%;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #f5f5f5;
+    border-radius: 8px;
+  }
 
+  
+  .form-head {
+    display: flex;
+    border-radius: 8px 8px 0px 0px;
+    flex-direction: row;
+    background: #008CFF;
+    align-items: center;
+    opacity: 1;
+    padding: 20px;
+  } 
+  
+  .form-text {
+    text-align: left;
+    font: normal normal normal 28px/37px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+    margin: auto
+    }
+
+  .cancel-img {
+    margin-right: 20px;
+    background: #008CFF;
+    width: 40px;
+    height: 44px;
+    }
+      
+    
