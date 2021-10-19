@@ -14,5 +14,20 @@ window.addEventListener('DOMContentLoaded',(event) => {
         } catch(e){
             nameError.textContent = e;
         }
-    })
+    });
+
+    const phoneNumber = document.querySelector('#phoneNumber');
+    const phoneNumberError = document.querySelector('.phoneNumber-error');
+    phoneNumber.addEventListener('input', function () {
+        if (phoneNumber.value.length == 0) {
+            phoneNumberError.textContent = "";
+            return;
+        }
+        try {
+            (new AddressBookData()).phoneNumber = phoneNumber.value;
+            phoneNumberError.textContent = "";
+        } catch (e) {
+            phoneNumberError.textContent = e;
+        }
+    });
 });
