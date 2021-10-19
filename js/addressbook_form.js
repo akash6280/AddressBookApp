@@ -47,3 +47,17 @@ window.addEventListener('DOMContentLoaded',(event) => {
         }
     });
 });
+
+const save = () => {
+    try{
+        let addressBookData = createAddressBook();
+        createAndUpdateStorage(addressBookData);
+    }catch(e){
+        return;
+    }
+}
+
+const createAddressBookDataObject = () => {
+    let addressBookDataObject = new AddressBookData();
+    return addressBookDataObject;
+} 
