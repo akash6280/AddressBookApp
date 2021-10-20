@@ -1,31 +1,40 @@
 {
-    "ContactDB": [
-      {
-        "id": "1",
-        "_name": "Mark",
-        "_address": "Cantt",
-        "_phoneNumber":"8475847583",
-        "_city": "Bhopal",
-        "_state": "Madhya Pradesh",
-        "_zipcode": "123212"
-      },
-      {
-        "id": "2",
-        "_name": "Bill Gates",
-        "_address": "Richmond circle",
-        "_department": "869485885851",
-        "_city": "Bengaluru",
-        "_state": "Karnataka",
-        "_zipcode": "560100"
-      },
-      {
-        "id":"3", 
-        "_name": "Amarpa",
-        "_address": "City Road",
-        "_department": "7676767876",
-        "_city": "Chennai",
-        "_state": "Tamil Nadu",
-        "_zipcode": "512033"
-      }
-    ]
-  } 
+  "ContactDB": [
+    {
+      "id": "1",
+      "_name": "Mark",
+      "_address": "Cantt",
+      "_phoneNumber": "8475847583",
+      "_city": "Bhopal",
+      "_state": "Madhya Pradesh",
+      "_zipcode": "123212"
+    },
+    {
+      "id": "2",
+      "_name": "Bill Gates",
+      "_address": "Richmond circle",
+      "_phoneNumber": "869485885851",
+      "_city": "Bengaluru",
+      "_state": "Karnataka",
+      "_zipcode": "560100"
+    },
+    {
+      "id": "3",
+      "_name": "Amarpa",
+      "_address": "City Road",
+      "_phoneNumber": "7676767876",
+      "_city": "Chennai",
+      "_state": "Tamil Nadu",
+      "_zipcode": "512033"
+    },
+    {
+      "id": "4",
+      "_name": "Tony",
+      "_phoneNumber": "7676898767",
+      "_address": "Asw fre",
+      "_state": "Karnataka",
+      "_city": "Bangalore",
+      "_zipcode": "768876"
+    }
+  ]
+}
