@@ -1,5 +1,5 @@
 let isUpdate = false;
-let contactDataObj = {};
+let contactDataObject = {};
 window.addEventListener('DOMContentLoaded',(event) => {
 
     const name = document.querySelector('#name');
@@ -72,43 +72,49 @@ window.addEventListener('DOMContentLoaded',(event) => {
     checkForUpdate();
 });
 
-const save = () => {
+const save = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
 
     try{
-        let contactData = createContactDataObject();
-        createAndUpdateStorage(contactData);
-        open("../pages/addressbook_home.html");
+        setContactDataObject();
+        createAndUpdateStorage();
+        resetForm();
+        window.location.replace(site_properties.home_page);
     }catch(e){
         return;
     }
 };
 
-function createAndUpdateStorage(contactData){
+function createAndUpdateStorage(){
     let contactDataList = JSON.parse(localStorage.getItem("ContactDataList"));
-    if(contactDataList != undefined){
-        contactDataList.push(contactData);
-    }else{
-        contactDataList = [contactData];
+    if(contactDataList){
+      let contactData = contactDataList.find(contact => contact._id == contactDataObject._id);
+      if(!contactData) {
+        contactDataList.push(contactDataObject);
+      }
+      else {
+        const index = contactDataList.map(contact => contact._id)
+                                         .indexOf(contactData._id);
+        contactDataList.splice(index, 1, contactDataObject);
+      }
     }
-    
+    else{
+      contactDataList = [contactDataObject];
+    }
     localStorage.setItem("ContactDataList",JSON.stringify(contactDataList));
 }
-const createContactDataObject = () => {
-    let contactDataObject = new ContactData();
-    try {
-        contactDataObject.id = createNewContactId();
-        contactDataObject.name = getInputValueById('#name');
-        contactDataObject.phoneNumber = getInputValueById("#phoneNumber");
-        contactDataObject.address = getInputValueById('#address');
-        contactDataObject.state = getInputValueById("#state");
-        contactDataObject.city = getInputValueById("#city");
-        contactDataObject.zipcode= getInputValueById("#zip");
+
+const setContactDataObject = () => {
+        if(!isUpdate)contactDataObject._id=createNewContactId();
+        contactDataObject._name = getInputValueById('#name');
+        contactDataObject._phoneNumber = getInputValueById("#phoneNumber");
+        contactDataObject._address = getInputValueById('#address');
+        contactDataObject._state = getInputValueById("#state");
+        contactDataObject._city = getInputValueById("#city");
+        contactDataObject._zipcode= getInputValueById("#zip");
         console.log(contactDataObject.toString());
         alert(contactDataObject.toString());
-    } catch (e) {
-        console.log(e);
-    }
-    return contactDataObject;
 
 }
 const createNewContactId = () => {
@@ -125,13 +131,14 @@ function getInputValueById(property) {
 } 
 
 const resetForm=()=>{
+    alert("in reset form");
     setValue("#name","");
     setValue("#phoneNumber","");
     setValue("#address","");
     setValue("#state","");
     setValue("#city","");
     setValue("#zip","");
-     setTextValue('.name-error','');
+    setTextValue('.name-error','');
     setTextValue('.phoneNumber-error','');
     setTextValue('.address-error','');
     setTextValue('.zip-error',"");
@@ -152,17 +159,17 @@ const checkForUpdate = () => {
     const contactJson = localStorage.getItem('editContact');
     isUpdate = contactJson ? true : false;
     if(!isUpdate) return;
-    contactObj = JSON.parse(contactJson);
+    contactDataObject = JSON.parse(contactJson);
     setForm();
 }
 
 const setForm = () => {
-    setValue('#name',contactObj._name);
-    setValue('#phoneNumber',contactObj._phone);
-    setValue('#address',contactObj._address);
-    setValue('#city',contactObj._city);
-    setValue('#state',contactObj._state);
-    setValue('#zip',contactObj._zipcode);
+    setValue('#name',contactDataObject._name);
+    setValue('#phoneNumber',contactDataObject._phoneNumber);
+    setValue('#address',contactDataObject._address);
+    setValue('#city',contactDataObject._city);
+    setValue('#state',contactDataObject._state);
+    setValue('#zip',contactDataObject._zipcode);
 }
 
  
