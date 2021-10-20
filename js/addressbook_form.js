@@ -89,13 +89,13 @@ const save = (event) => {
 function createAndUpdateStorage(){
     let contactDataList = JSON.parse(localStorage.getItem("ContactDataList"));
     if(contactDataList){
-      let contactData = contactDataList.find(contact => contact._id == contactDataObject._id);
+      let contactData = contactDataList.find(contact => contact.id == contactDataObject.id);
       if(!contactData) {
         contactDataList.push(contactDataObject);
       }
       else {
-        const index = contactDataList.map(contact => contact._id)
-                                         .indexOf(contactData._id);
+        const index = contactDataList.map(contact => contact.id)
+                                         .indexOf(contactData.id);
         contactDataList.splice(index, 1, contactDataObject);
       }
     }
@@ -106,15 +106,13 @@ function createAndUpdateStorage(){
 }
 
 const setContactDataObject = () => {
-        if(!isUpdate)contactDataObject._id=createNewContactId();
+        if(!isUpdate)contactDataObject.id=createNewContactId();
         contactDataObject._name = getInputValueById('#name');
         contactDataObject._phoneNumber = getInputValueById("#phoneNumber");
         contactDataObject._address = getInputValueById('#address');
         contactDataObject._state = getInputValueById("#state");
         contactDataObject._city = getInputValueById("#city");
         contactDataObject._zipcode= getInputValueById("#zip");
-        console.log(contactDataObject.toString());
-        alert(contactDataObject.toString());
 
 }
 const createNewContactId = () => {
@@ -131,7 +129,6 @@ function getInputValueById(property) {
 } 
 
 const resetForm=()=>{
-    alert("in reset form");
     setValue("#name","");
     setValue("#phoneNumber","");
     setValue("#address","");
