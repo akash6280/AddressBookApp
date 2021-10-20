@@ -39,25 +39,50 @@ window.addEventListener('DOMContentLoaded',(event) => {
             return;
         }
         try {
-            console.log(address.value);
             (new AddressBookData()).address = address.value;
             addressError.textContent = "";
         } catch (e) {
             addressError.textContent = e;
         }
     });
+
+    const form=document.querySelector('.form');
+    form.addEventListener('click',function(){
+        document.getElementById('submitButton').disabled = false;
+    });
 });
 
 const save = () => {
+
     try{
-        let addressBookData = createAddressBook();
-        createAndUpdateStorage(addressBookData);
+        let addressBookData = createAddressBookDataObject();
     }catch(e){
         return;
     }
-}
+};
 
 const createAddressBookDataObject = () => {
     let addressBookDataObject = new AddressBookData();
+    try {
+        addressBookDataObject.id = new Date().getTime();
+        addressBookDataObject.name = getInputValueById('#name');
+        addressBookDataObject.phoneNumber = getInputValueById("#phoneNumber");
+        addressBookDataObject.address = getInputValueById('#address');
+        addressBookDataObject.tate = getInputValueById("#state");
+        addressBookDataObject.city = getInputValueById("#city");
+        addressBookDataObject.zipcode= getInputValueById("#zipCode");
+    } catch (e) {
+        console.log(e);
+    }
     return addressBookDataObject;
+
+}
+
+
+function getInputValueById(property) {
+    let value = document.querySelector(property).value;
+    return value;
 } 
+
+
+ 
