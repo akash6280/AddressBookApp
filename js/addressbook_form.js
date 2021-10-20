@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded',(event) => {
             return;
         }
         try{
-            new ContactData().name=name.value;
+            checkName(name.value);
             nameError.textContent="";
             
         } catch(e){
@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded',(event) => {
             return;
         }
         try {
-            new ContactData().phoneNumber = phoneNumber.value;
+            checkPhoneNumber(phoneNumber.value);
             phoneNumberError.textContent = "";
         } catch (e) {
             phoneNumberError.textContent = e;
@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded',(event) => {
             return;
         }
         try {
-            new ContactData().address = address.value;
+            checkAddress(address.value);
             addressError.textContent = "";
         } catch (e) {
             addressError.textContent = e;
@@ -56,7 +56,7 @@ window.addEventListener('DOMContentLoaded',(event) => {
             return;
         }
         try {
-            ( new ContactData()).zipcode = zip.value;
+           checkZipCode(zip.value);
             zipError.textContent = "";
         } catch (e) {
             zipError.textContent = e;
