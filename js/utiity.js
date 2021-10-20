@@ -8,12 +8,3 @@ const checkPhoneNumber = (phoneNumber) => {
     if(!phoneNumberRegex.test(phoneNumber)) throw 'Invalid Phone Number';
 }
 
-const checkAddress = (address) => {
-    let addressRegex = RegExp('^[A-Z]{1}[a-zA-Z\\s]{2,}$');
-    if(!addressRegex.test(address)) throw 'Invalid Address';
-}
-
-const checkZipCode = (zipCode) => {
-    let zipCodeRegex = RegExp("^[0-9]{3}\\s{0,1}[0-9]{3}$");
-    if(!zipCodeRegex.test(zipCode)) throw 'Invalid Zipcode';
-}
