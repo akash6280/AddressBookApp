@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="../css/adressbookform.css" />
         <script defer src="../js/addressbook_form.js"></script>
-        <script defer src="../js/addressbook_data.js"></script>
+        <script defer src="../js/contact.js"></script>
         <title>Address Book Form</title>
     </head>
         
@@ -73,16 +73,10 @@
                     </div>
                     <div>
                         <label class="label text " for="zip">Zip Code</label>
-                        <select id="zipCode" name="zipCode" required>
-                          <option value="" class="text" disabled selected hidden>Select Zip Code</option>
-                          <option value="530068">530068</option>
-                          <option value="444901">444901</option>
-                          <option value="463106">463106</option>
-                          <option value="600001">600001</option>
-                          <option value="226001">226001</option>
-                          <option value="500001">500001</option>
-                        </select>
-                    </div>    
+                            <input type="text" class="input zipCode" id="zip" name="zip" autocomplete="off" required>
+                            <br>
+                            <error-output class="zip-error"></error-output>
+                    </div>   
                 </div>
 
                 <div class="button-content">
