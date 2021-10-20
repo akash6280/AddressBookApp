@@ -96,9 +96,9 @@ const createAddressBookDataObject = () => {
         addressBookDataObject.name = getInputValueById('#name');
         addressBookDataObject.phoneNumber = getInputValueById("#phoneNumber");
         addressBookDataObject.address = getInputValueById('#address');
-        addressBookDataObject.tate = getInputValueById("#state");
+        addressBookDataObject.state = getInputValueById("#state");
         addressBookDataObject.city = getInputValueById("#city");
-        addressBookDataObject.zipcode= getInputValueById("#zipCode");
+        addressBookDataObject.zipcode= getInputValueById("#zip");
         console.log(addressBookDataObject.toString());
         alert(addressBookDataObject.toString());
     } catch (e) {
