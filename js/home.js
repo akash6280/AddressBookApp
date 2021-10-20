@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 const getContactDataFromStorage = () => {
-    return localStorage.getItem('AddressBookList') ?JSON.parse(localStorage.getItem('AddressBookList')) : [];
+    return localStorage.getItem('ContactDataList') ?JSON.parse(localStorage.getItem('ContactDataList')) : [];
 }
 
 const createInnerHtml = () => {
@@ -41,3 +41,15 @@ const createInnerHtml = () => {
     }
     document.querySelector("#table-display").innerHTML = innerHtml;
 }; 
+
+const remove = (node) => {
+    let contactData = contactDataList.find(contact => contact._id == node.id);
+    if(!contactData) return;
+    const index = contactDataList
+                    .map(contact => contact._id)
+                    .indexOf(contactData._id);
+    contactDataList.splice(index, 1);
+    localStorage.setItem("ContactDataList",JSON.stringify(contactDataList));
+    document.querySelector(".address-count").textContent = contactDataList.length;
+    createInnerHtml();
+} 
