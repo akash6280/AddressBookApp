@@ -13,3 +13,7 @@ const checkAddress = (address) => {
     if(!addressRegex.test(address)) throw 'Invalid Address';
 }
 
+const checkZipCode = (zipCode) => {
+    let zipCodeRegex = RegExp("^[0-9]{3}\\s{0,1}[0-9]{3}$");
+    if(!zipCodeRegex.test(zipCode)) throw 'Invalid Zipcode';
+}
