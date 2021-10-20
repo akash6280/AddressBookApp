@@ -26,6 +26,32 @@
                 </div>
                 <a href="addressbook_form.html" class="add-button" ><img src="../assets/icons/add-24px.svg" alt="">Add Person</a>
             </div>
+            <div class="table-main">
+                <table id="display" class="table">
+                    <tr>
+                        <th>FullName</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip code</th>
+                        <th>Phone Number</th>
+                    </tr>
+                    <tr>
+                        <td>Akash</td>
+                        <td>Cantt</td>
+                        <td>Varanasi</td>
+                        <td>Uttar Pradesh</td>
+                        <td>221002</td>
+                        <td>9878767865</td>
+                        <td>
+                            <img id="1" onclick="remove(this)" alt="delete"
+                            src="../assets/icons/delete-black-18dp.svg" style="padding-right: 5px;">
+                            <img id="1" alt="edit" onclick="update(this)"
+                            src="../assets//icons/create-black-18dp.svg">
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
         <script  src="../js/home.js"></script>
         <script  src="../js/utility.js"></script>
