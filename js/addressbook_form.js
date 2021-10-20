@@ -96,5 +96,27 @@ function getInputValueById(property) {
     return value;
 } 
 
+const resetForm=()=>{
+    setValue("#name","");
+    setValue("#phoneNumber","");
+    setValue("#address","");
+    setValue("#state","");
+    setValue("#city","");
+    setValue("#zipCode","");
+    setTextValue('.name-error','');
+    setTextValue('.phoneNumber-error','');
+    setTextValue('.address-error','');
+}
+
+const setValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.value = value;
+} 
+
+
+const setTextValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.textContent = value;
+}
 
  
