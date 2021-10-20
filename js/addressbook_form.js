@@ -92,7 +92,7 @@ function createAndUpdateStorage(addressBookData){
 const createAddressBookDataObject = () => {
     let addressBookDataObject = new ContactData();
     try {
-        addressBookDataObject.id = new Date().getTime();
+        addressBookDataObject.id = createNewContactId();
         addressBookDataObject.name = getInputValueById('#name');
         addressBookDataObject.phoneNumber = getInputValueById("#phoneNumber");
         addressBookDataObject.address = getInputValueById('#address');
@@ -107,6 +107,12 @@ const createAddressBookDataObject = () => {
     return addressBookDataObject;
 
 }
+const createNewContactId = () => {
+    let contactID = localStorage.getItem("ContactId");
+    contactID = !contactID ? 1 : (parseInt(contactID)+1).toString();
+    localStorage.setItem("ContactId",contactID);
+    return contactID;
+  }
 
 
 function getInputValueById(property) {
