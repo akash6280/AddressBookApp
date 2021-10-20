@@ -71,40 +71,40 @@ window.addEventListener('DOMContentLoaded',(event) => {
 const save = () => {
 
     try{
-        let addressBookData = createAddressBookDataObject();
-        createAndUpdateStorage(addressBookData);
+        let contactData = createContactDataObject();
+        createAndUpdateStorage(contactData);
         open("../pages/addressbook_home.html");
     }catch(e){
         return;
     }
 };
 
-function createAndUpdateStorage(addressBookData){
-    let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));
-    if(addressBookList != undefined){
-        addressBookList.push(addressBookData);
+function createAndUpdateStorage(contactData){
+    let contactDataList = JSON.parse(localStorage.getItem("ContactDataList"));
+    if(contactDataList != undefined){
+        contactDataList.push(contactData);
     }else{
-        addressBookList = [addressBookData];
+        contactDataList = [contactData];
     }
     
-    localStorage.setItem("AddressBookList",JSON.stringify(addressBookList));
+    localStorage.setItem("ContactDataList",JSON.stringify(contactDataList));
 }
-const createAddressBookDataObject = () => {
-    let addressBookDataObject = new ContactData();
+const createContactDataObject = () => {
+    let contactDataObject = new ContactData();
     try {
-        addressBookDataObject.id = createNewContactId();
-        addressBookDataObject.name = getInputValueById('#name');
-        addressBookDataObject.phoneNumber = getInputValueById("#phoneNumber");
-        addressBookDataObject.address = getInputValueById('#address');
-        addressBookDataObject.state = getInputValueById("#state");
-        addressBookDataObject.city = getInputValueById("#city");
-        addressBookDataObject.zipcode= getInputValueById("#zip");
-        console.log(addressBookDataObject.toString());
-        alert(addressBookDataObject.toString());
+        contactDataObject.id = createNewContactId();
+        contactDataObject.name = getInputValueById('#name');
+        contactDataObject.phoneNumber = getInputValueById("#phoneNumber");
+        contactDataObject.address = getInputValueById('#address');
+        contactDataObject.state = getInputValueById("#state");
+        contactDataObject.city = getInputValueById("#city");
+        contactDataObject.zipcode= getInputValueById("#zip");
+        console.log(contactDataObject.toString());
+        alert(contactDataObject.toString());
     } catch (e) {
         console.log(e);
     }
-    return addressBookDataObject;
+    return contactDataObject;
 
 }
 const createNewContactId = () => {
