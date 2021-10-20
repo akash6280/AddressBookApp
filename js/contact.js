@@ -5,14 +5,8 @@ const zipRegex = RegExp("^[0-9]{3}\\s{0,1}[0-9]{3}$");
 
 class ContactData {
 
-    get id() { 
-        return this._id;
-    }
-
-    set id(id){
-        this._id = id;
-    }
-
+    id ;
+    
     get name() { 
         return this._name; 
     }
