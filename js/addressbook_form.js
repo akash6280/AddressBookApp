@@ -71,6 +71,7 @@ const createAddressBookDataObject = () => {
         addressBookDataObject.tate = getInputValueById("#state");
         addressBookDataObject.city = getInputValueById("#city");
         addressBookDataObject.zipcode= getInputValueById("#zipCode");
+        console.log(addressBookDataObject.toString());
     } catch (e) {
         console.log(e);
     }
