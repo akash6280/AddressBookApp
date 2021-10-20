@@ -102,8 +102,7 @@ html body {
 
 .table{
   width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0 10px;
+  border-spacing: 0 15px;
   min-width: 800px;
 }
 
@@ -148,4 +147,13 @@ td img:first-child{
 
 td img{
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1100px){
+  td{
+    padding: 10px 2px;
+  }
+  th{
+    padding-left: 0;
+  }
 }
