@@ -57,7 +57,7 @@
   }
  
   .form {
-    min-width: 60%;
+    min-width: 50%;
     background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border: 1px solid #f5f5f5;
@@ -140,7 +140,7 @@
         margin-left: 10%;
         margin-right: 10%;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
     }
         
     select {
@@ -149,19 +149,16 @@
         background: #FFFFFF 0% 0% no-repeat padding-box;
         border: 1px solid #BDBDBD;
         border-radius: 3px;
-        opacity: 1;
         text-align: left;
         font: normal normal normal 18px/24px Roboto;
         letter-spacing: 0px;
         padding-right: 100px;
         align-items: center;
         color: #42515F;
-        width: 100%;
+        width: 180px;
         padding: 10px;
         font-size: 14px;
         padding: 12px;
-        resize: vertical;
-        width: 200px;
       }
 
       error-output {
@@ -200,10 +197,9 @@
       }
       
       .submitButton:hover {
-        background: #39ac1ad7;
+        background: #008CFF;
         color: #faf9f9e3;
         font-weight: 300;
-        border: 2px solid #2bd625;
       }
       
       .resetButton:hover {
@@ -220,5 +216,15 @@
         cursor: none;
         pointer-events:none;
       }
-      
-      
+
+      #zip{
+        height:44px;
+        width: 100%;
+       }
+ 
+       #city{
+        margin-right:20px;
+      }
+      #state{
+        margin-right:20px
+      }
