@@ -8,3 +8,8 @@ const checkPhoneNumber = (phoneNumber) => {
     if(!phoneNumberRegex.test(phoneNumber)) throw 'Invalid Phone Number';
 }
 
+const checkAddress = (address) => {
+    let addressRegex = RegExp('^[A-Z]{1}[a-zA-Z\\s]{2,}$');
+    if(!addressRegex.test(address)) throw 'Invalid Address';
+}
+
