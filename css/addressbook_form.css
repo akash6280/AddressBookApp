@@ -47,7 +47,7 @@
   }
  
   .form-content {
-    margin-top: 35px;
+    margin-top: 2%;
     min-height: calc(100%-80px);
     background-color: #f7f7f7;
     display: flex;
@@ -105,7 +105,7 @@
     }
       
     label {
-        padding: 25px 12px 5px 0;
+        padding: 15px 12px 5px 0;
         display: inline-block;
     }
       
@@ -170,11 +170,11 @@
 
       .button-content {
         display: flex;
-        margin-top: 35px;
+        margin-top: 20px;
         align-items: center;
         justify-content: flex-end;
         margin-right: 10%;
-        margin-bottom: 35px;
+        margin-bottom: 50px;;
       }
       
       .button {
@@ -228,3 +228,37 @@
       #state{
         margin-right:20px
       }
+
+      @media only screen and (max-width: 720px) {
+ 
+        .submit-reset {
+            width: 50%;
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+            flex-flow:wrap;
+            justify-content: space-evenly;
+            align-items:center;
+            margin-left:100px;
+            margin-top:50p;
+        }
+        .submitButton{
+            margin: 0px;
+        }
+        .buttonParent {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+        }
+    
+        .select-elements{
+          flex-direction:column;
+          flex-flow:wrap;
+          align-items:flex-start;
+          
+        }
+        #zip{
+          display:flex;
+          width:180px;
+        }
+    }
+    
