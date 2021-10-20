@@ -44,8 +44,6 @@ class AddressBookData {
         return this._city;
     }
     set city(city) {
-        if(city=="")
-            throw 'Input a value';
         this._city = city;
     }
 
@@ -53,8 +51,6 @@ class AddressBookData {
         return this._state
     }
     set state(state) {
-        if(state=="")
-            throw 'Input a value';
         this._state = state;
     }
 
@@ -62,13 +58,11 @@ class AddressBookData {
         return this._zipcode;
     }
     set zipcode(zipcode) {
-        if(zipcode=="")
-            throw 'Input a value';
         this._zipcode = zipcode;
     }
     
     toString() {
         return "ID= "+this.id+",Name= " + this.name + ",Phone Number= " + this.phoneNumber + ",Address= " + this.address + ",City= " + this.city + ",State=" 
-                + this.state + ",Zip code= " + this.zipCode;
+                + this.state + ",Zip code= " + this.zipcode;
     }
 } 
