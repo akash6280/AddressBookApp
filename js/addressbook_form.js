@@ -56,11 +56,22 @@ const save = () => {
 
     try{
         let addressBookData = createAddressBookDataObject();
+        createAndUpdateStorage(addressBookData);
     }catch(e){
         return;
     }
 };
 
+function createAndUpdateStorage(addressBookData){
+    let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));
+    if(addressBookList != undefined){
+        addressBookList.push(addressBookData);
+    }else{
+        addressBookList = [addressBookData];
+    }
+    
+    localStorage.setItem("AddressBookList",JSON.stringify(addressBookList));
+}
 const createAddressBookDataObject = () => {
     let addressBookDataObject = new AddressBookData();
     try {
