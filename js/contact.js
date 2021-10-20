@@ -1,8 +1,9 @@
 const nameRegex = RegExp("^[A-Z]{1}[a-zA-Z]{2,}$");
 const phoneNumberRegex = RegExp("^([+][0-9]{3}|[0-9]{2})?[1-9]{1}[0-9]{9}$");
-const addressRegex= RegExp('^[a-zA-Z0-9/-]{3,}([\\s]*([a-zA-Z0-9]{3,})?)*$');
+const addressRegex= RegExp('^[a-zA-Z0-9]{3,}([\\s]?[a-zA-Z0-9]{3,})*$')
+const zipRegex = RegExp("^[0-9]{3}\\s{0,1}[0-9]{3}$");
 
-class AddressBookData {
+class ContactData {
 
     get id() { 
         return this._id;
@@ -58,7 +59,10 @@ class AddressBookData {
         return this._zipcode;
     }
     set zipcode(zipcode) {
+        if(zipRegex.test(zipcode))
         this._zipcode = zipcode;
+        else throw 'Invalid zipcode number';
+       
     }
     
     toString() {
