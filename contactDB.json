@@ -26,15 +26,6 @@
       "_city": "Chennai",
       "_state": "Tamil Nadu",
       "_zipcode": "512033"
-    },
-    {
-      "id": "4",
-      "_name": "Tony",
-      "_phoneNumber": "7676898767",
-      "_address": "JPr block",
-      "_state": "Karnataka",
-      "_city": "Bangalore",
-      "_zipcode": "768876"
     }
   ]
 }
